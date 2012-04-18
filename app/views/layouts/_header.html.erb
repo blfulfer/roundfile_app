@@ -13,8 +13,9 @@
 	<div id="menu">
 		<ul>
 		<li><%= link_to "Home", root_path %></li>
-		<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+		
 		<% if signed_in? %>
+		<li><%= link_to "Settings", "/users/#{current_user}/edit" %></li>
 		<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
 		<% else %>
 		<li><%= link_to "Sign in", signin_path %></li>
