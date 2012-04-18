@@ -18,7 +18,7 @@
 	<td><%= resumesection.section.typesection %></td>
 	<td><%= resumesection.section.title %></td>
 	<td><%= resumesection.orderNum %></td>
-	<td><%= link_to 'Edit Order', edit_resumesection_path(resumesection) %> | 
+	<td><%= link_to 'Edit Order', "resumesections/#{resumesection}/edit" %> | 
 	<%= link_to 'Delete', resumesection, :confirm => 'Are you sure?', :method => :delete %></td>
  
   </tr>
