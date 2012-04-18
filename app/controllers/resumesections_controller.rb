@@ -69,10 +69,10 @@ class ResumesectionsController < ApplicationController
 	@resumesection = Resumesection.find_all_by_resumeid(params[:id], :order => "orderNum")
 	
 	#code from DEMO APP
-	respond_to do |format|
-      format.html 
-      format.xml  { render :xml => @resumesection }
-    end
+	#respond_to do |format|
+     # format.html 
+      #format.xml  { render :xml => @resumesection }
+    #end
 
   end
   
