@@ -1,6 +1,6 @@
 class Resumesection < ActiveRecord::Base
 
-	attr_accessible :resumeid, :sectionid, :orderNum
+	attr_accessible :resumeid, :sectionid, :ordernum
 	
 	belongs_to :resume
 	belongs_to :section, :class_name => 'Section', :foreign_key => 'sectionid'
@@ -8,7 +8,7 @@ class Resumesection < ActiveRecord::Base
 	
 	validates :resumeid, :presence => true
 	validates :sectionid, :presence => true
-	validates :orderNum, :presence => true
+	validates :ordernum, :presence => true
 	
 end
 
