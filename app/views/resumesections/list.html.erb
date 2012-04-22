@@ -13,6 +13,7 @@
 	<th></th>
   </tr>
 
+<% if !@resumesection.blank? %>
 <% @resumesection.each do |resumesection| %>
   <tr>
     <td><%= resumesection.id %></td>
@@ -25,5 +26,10 @@
   </tr>
 <% end %>
 </table>
+
+<% else %>
+</table>
+You do not currently have any sections in your resume.<br /><br />	
+<% end %>
 <br />
 <%= button_to "Finish Creating Resume", "/viewresume/#{params[:id]}" %>

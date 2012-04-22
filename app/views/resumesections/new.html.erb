@@ -1,12 +1,14 @@
 <h1><%= @title %></h1>
 
+<% if !@myContact.blank? || !@myObjective.blank? || !@myQualifications.blank? || !@myEducation.blank? || !@mySkills.blank? || !@myEmplHistory.blank? || !@myListRef.blank? || !@myOther.blank? %>
 
 	<table>
 	<tr>
 		<th></th><th>Choose Section</th><th>Order #</th><th></th>
 	</tr>
 	
-	
+
+
 	<% if !@myContact.blank? %>
 	<tr>
 		<%= form_for(@resumesection) do |g| %>
@@ -145,5 +147,13 @@
 	
 	
 	</table>
+	
+	<% else %>
+	<br />
+	You do not have any sections to add to your  resume.<br />
+	<%= link_to "Create a new section", "/newsection" %><br /><br /><br />
+	
+	<% end %>
+	
 
-  <%= link_to "See Current Sections", "/newresumelist/#{params[:id]}"%>
+  <%= link_to "See Current Resume Sections", "/newresumelist/#{params[:id]}"%>
