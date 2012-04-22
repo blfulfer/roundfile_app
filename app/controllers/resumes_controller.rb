@@ -5,7 +5,7 @@ class ResumesController < ApplicationController
 	@resume = Resume.find(params[:id])
 	
 	
-	@resumesection = Resumesection.find_all_by_resumeid(params[:id], :order => "ordernum")
+	@resumesection = Resumesection.find_all_by_resumeid(params[:id], :order => "orderNum")
 	@comment = Comment.find_all_by_resumeid(params[:id], :order => "created_at")
 	@rating = Rating.find_all_by_resumeid(params[:id], :order => "created_at")
 	@usercurrentrating = Rating.find_by_resumeid_and_userid(params[:id], current_user.id)

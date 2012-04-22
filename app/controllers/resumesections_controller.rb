@@ -66,7 +66,7 @@ class ResumesectionsController < ApplicationController
   def list
 	@title = "Resume List"
 	@resume = Resume.find(params[:id])
-	@resumesection = Resumesection.find_all_by_resumeid(params[:id], :order => "orderNum")
+	@resumesection = Resumesection.find_all_by_resumeid(params[:id], :order => "ordernum")
 	
 	#code from DEMO APP
 	#respond_to do |format|
