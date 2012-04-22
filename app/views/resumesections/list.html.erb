@@ -4,6 +4,7 @@
 
 <b><%= link_to "Add Another Section", "/newresume/#{params[:id]}" %></b><br /><br />
 
+<% if !@resumesection.blank? %>
 <table>
   <tr>
     <th>ID</th>
@@ -13,7 +14,7 @@
 	<th></th>
   </tr>
 
-<% if !@resumesection.blank? %>
+
 <% @resumesection.each do |resumesection| %>
   <tr>
     <td><%= resumesection.id %></td>
@@ -28,8 +29,8 @@
 </table>
 
 <% else %>
-</table>
-You do not currently have any sections in your resume.<br /><br />	
+
+You do not have any sections in your resume.<br /><br />	
 <% end %>
 <br />
 <%= button_to "Finish Creating Resume", "/viewresume/#{params[:id]}" %>
