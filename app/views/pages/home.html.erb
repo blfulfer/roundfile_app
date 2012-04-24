@@ -1,5 +1,15 @@
 
+<% if signed_in? %>
 <h2 class="title">Roundfile: A Resume Tool</h2>
+  <p class ="meta">
+  Welcome to Roundfile!
+  Create sections to mix and match to create your perfect resume!
+  Choose from the links on the left to start creating your resume.
+</p>
+<br />
+  
+<% else %>
+  <h2 class="title">Roundfile: A Resume Tool</h2>
 
 <p class ="meta">
   Welcome to Roundfile!
@@ -7,3 +17,4 @@
 </p>
 <br />
 <%= link_to "Sign Up Now!", signup_path, :class => "signup_button round" %>
+<% end %>
