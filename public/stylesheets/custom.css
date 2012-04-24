@@ -1,3 +1,7 @@
+html {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -5,6 +9,8 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #181B20;
+	height: 100%;
+	
 }
 
 h1, h2, h3 {
@@ -65,6 +71,7 @@ img.aligncenter {
 	width: 1000px;
 	margin: 0 auto;
 	padding: 0;
+	height: 100%;
 }
 
 /* Header */
@@ -193,11 +200,13 @@ img.aligncenter {
 	margin: 0px auto;
 	background: #212121;
 	width: 150px;
+	height: 100%;
 }
 
 #sidebar {
 	width: 150px;
 	margin: 0px auto;
+	height: 100%;
 }
 
 #sidebar ul {
@@ -265,11 +274,13 @@ img.aligncenter {
 	margin: 0 auto;
 	padding: 0;
 	background-color: #FFFFFF;
+	min-height: 100%;
 }
 
 #page-bgtop {
 	margin: 0px;
 	padding: 40px 30px 0px 30px;
+	min-height: 100%;
 }
 
 #page-bgbtm {
@@ -283,6 +294,7 @@ img.aligncenter {
 	float: right;
 	width: 600px;
 	padding: 0px 0px 0px 0px;
+	min-height: 100%;
 }
 
 .post {
@@ -334,6 +346,8 @@ img.aligncenter {
 	float: left;
 	width: 240px;
 	padding: 0px 0px 0px 0px;
+	min-height: 100%
+    
 }
 
 #sidebar ul {
