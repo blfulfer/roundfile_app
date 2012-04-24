@@ -1,4 +1,4 @@
-Link to heroku: [http://roundfile.heroku.com]
+Link to heroku: http://roundfile.heroku.com
 
 Team 2 - “Rails on Rails on Rails”
 
@@ -12,6 +12,29 @@ Moohanad Rasheed
 Credit:
 Star Rating CSS functionality from:  http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/
 User and Sessions functionality taken from sample_app.
+
+
+NOTES:
+==================================================================================================
+This gem, Flavoured Markdown, will help us solve the potential risk of allowing users to enter 
+malicious code with HTML or JavaScript.
+https://github.com/lawrencepit/flavoured_markdown
+==================================================================================================
+
+Functionality that is provided by Flavoured Markdown:
+
+Do not allow javascript, styles and HTML codes
+Except for A tags that have no on* attributes
+And except for BR tags
+HTML entities are alllowed (e.g.: Â©, &, etc.)
+URLs and emails are automatically hyperlinked. Long hyperlinks are automatically limited to 55 characters.
+Three consecutive dots are replaced by an ellipsis character
+Fancy pants mode
+Prevents paragraphs and list items from having an orphan.
+
+
+
+
 
 
 -----------------------------------------------------------------------
