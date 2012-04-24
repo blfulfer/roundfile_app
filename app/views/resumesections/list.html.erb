@@ -1,11 +1,10 @@
 
 <h1><%= @title %></h1>
 <br />
-
 <b><%= link_to "Add Another Section", "/newresume/#{params[:id]}" %></b><br /><br />
 
 <% if !@resumesection.blank? %>
-<table>
+<table class="profile">
   <tr>
     <th>ID</th>
     <th>Type of Section</th>

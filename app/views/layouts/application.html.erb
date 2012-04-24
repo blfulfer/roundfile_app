@@ -8,15 +8,21 @@
   </head>
   <body>
       <%= render 'layouts/header' %>
+	  
       <div id="wrapper">
 	  <div id= "sidebar-wrapper">
 		<%= render 'layouts/sidebar' %>
 	  </div>
 		<div id="page">
-			<div id="page-bgtop">
+		
+		<div id="page-bgtop">
+		<section class="round">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+		
 				<%= yield %>
-				</br>
-				</br>
+      </section>
 			</div>
 		</div>
 			

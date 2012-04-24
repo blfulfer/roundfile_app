@@ -32,7 +32,7 @@ before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
     @user = User.new(params[:user])
     if @user.save
       sign_in_not_remembered @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to Roundfile!"
       redirect_to @user
     else
       @title = "Sign up"
