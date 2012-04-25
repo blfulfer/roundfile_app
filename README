@@ -13,13 +13,45 @@ Credit:
 Star Rating CSS functionality from:  http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/
 User and Sessions functionality taken from sample_app.
 
+--------------------------------------------------------------------------------------
+
+Create resumes by putting sections together.
+First create a section (or more).
+- Sections can be edited or deleted.
+
+Then, create a new resume.
+-Give it a name.
+-Choose the sections you would like to add and the order they will go in.
+-Resumes can be edited later. (Order of sections can be changed, sections can be added, 
+     and sections can be deleted.
+
+When viewing a resume, you can:
+-Comment
+    -You can delete or edit a comment that you made.
+-Rate
+    -You can delete a rating that you made.
+-If you are the resume creator, you can edit or delete your resume.
+    -- When your resume is deleted, all the section/resume reations are also deleted. 
+       (Model: resumesection)
+
+My sections shows a list of your sections.
+
+My resumes shows a list of your resumes.
+
+The User Resumes section shows you a list of users.
+-When you select a user, a list of their resumes shows up.
+
+Security is set up so that you have to be logged in to access any pages.
+Some other pages also require that the creator has the only access (Ex: edit, delete)
+
+--------------------------------------------------------------------------------------
 
 NOTES:
-==================================================================================================
-This gem, Flavoured Markdown, will help us solve the potential risk of allowing users to enter 
-malicious code with HTML or JavaScript.
+====================================================================================
+This gem, Flavoured Markdown, will help us solve the potential risk of allowing
+users to enter malicious code with HTML or JavaScript.
 https://github.com/lawrencepit/flavoured_markdown
-==================================================================================================
+====================================================================================
 
 Functionality that is provided by Flavoured Markdown:
 
@@ -38,10 +70,9 @@ Prevents paragraphs and list items from having an orphan.
 
 
 -----------------------------------------------------------------------
-Resume Test Section Data
+Resume Section TEST Data
 
 ///////////////////CONTENT
-
 <TITLE>Hunter S. Jobseeker</TITLE> 
 <BODY BGCOLOR="#FFFFFF"> 
 <center><H1>John Doe</H1> 
@@ -53,14 +84,11 @@ Email: jobseeker@internet.com<br />
 
 
 //////////////////OBJECTIVE
-
 <h2>Objective</h2> 
 Marketing, public relations or sales position with a medical equipment company.
 
 
-
 /////////////////////WORK EXPERIENCE
-
 <H2>Sales Experience</H2> 
 <H3>March 1993 to Present</H3> 
 Commissioned Salesperson -- Fine Jewelry<BR> 
@@ -79,8 +107,6 @@ Sold men's suits, established customer relations, handled staff scheduling dutie
 
 
 ////////////////////EDUCATION
-
-
 <H2>Education</H2> 
 Bachelor of Arts in Biology -- December 1989 
 <BR>Columbia University<BR> 
@@ -88,6 +114,5 @@ GPA: 3.5/4.0
 
 
 ////////////////////////OTHER
-
 <H2>Activities</H2> 
 Vice President 1989, Social Chair 1987, Pi Beta Phi Sorority
