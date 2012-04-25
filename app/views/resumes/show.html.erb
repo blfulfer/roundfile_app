@@ -3,8 +3,10 @@
 <br />
 <b>Resume Name:</b> <%= @resume.name %><br />
 Author: <%= link_to "#{@resume.user.name}", user_path(@resume.userid) %><br />
+<% if current_user.id == @resume.userid %>
 <%= link_to 'Edit Resume', edit_resume_path(@resume) %> | 
 <%= link_to 'Delete Resume', @resume, :confirm => 'Are you sure?', :method => :delete %><br />
+<% end %>
 
 <br />
 <br />

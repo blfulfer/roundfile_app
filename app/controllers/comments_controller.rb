@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+	before_filter :authenticate, :only => [:create, :show, :new, :edit, :update]
+	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :authorized_user, :only => :destroy
+	
   def new
 	@title = "Create a Comment"
 	
@@ -26,9 +31,6 @@ class CommentsController < ApplicationController
 	
 	@title = "Show Comment"
   end
-
-
-
   
   
   def edit
@@ -60,6 +62,28 @@ class CommentsController < ApplicationController
 	redirect_to "/viewresume/#{@comment.resumeid}"
 
   end
+  
+  
+  private
+	
+	def authenticate
+      deny_access unless signed_in?
+    end
+	
+	def correct_user
+      @comment = Comment.find(params[:id])
+      redirect_to(root_path) unless current_user.id == @comment.userid
+    end
+	
+    def authorized_user
+      #@comment = current_user.comments.find_by_id(params[:id])
+	  @comment = Comment.find(params[:id])
+	  
+      if @comment.userid != current_user.id
+		redirect_to root_path
+	  end
+    end
+
 
   
 end

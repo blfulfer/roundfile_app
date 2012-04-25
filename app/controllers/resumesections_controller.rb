@@ -1,5 +1,8 @@
 class ResumesectionsController < ApplicationController
- 
+	before_filter :authenticate, :only => [:create, :show, :new, :list, :edit, :update]
+	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :authorized_user, :only => :destroy
+	
 	  
   def show
 	@resumesection = Resumesection.find(params[:id])
@@ -126,6 +129,27 @@ class ResumesectionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+	
+	def authenticate
+      deny_access unless signed_in?
+    end
+	def correct_user
+      @resumesection = Resumesection.find(params[:id])
+	  @resume = Resume.find(@resumesection.resumeid)
+      redirect_to(root_path) unless current_user.id == @resume.userid
+    end
+    def authorized_user
+      #@section = current_user.sections.find_by_id(params[:id])
+	  @resumesection = Resumesection.find(params[:id])
+	  #@rs = @resumesection.resumeid
+	  @resume = Resume.find(@resumesection.resumeid)
+	  
+	  if @resume.userid != current_user.id
+		redirect_to root_path
+	  end
+    end
 
   
 end

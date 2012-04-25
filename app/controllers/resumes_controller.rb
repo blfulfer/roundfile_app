@@ -1,4 +1,8 @@
 class ResumesController < ApplicationController
+
+	before_filter :authenticate, :only => [:create, :show, :new, :allresumes, :myresumes, :userres, :edit, :update]
+	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :authorized_user, :only => :destroy
   
   def show
 	@title = "View Resume"
@@ -98,6 +102,24 @@ class ResumesController < ApplicationController
 	redirect_to :action => 'myresumes'
 
   end
+  
+  private
+	
+	def authenticate
+      deny_access unless signed_in?
+    end
+	def correct_user
+      @resume = Resume.find(params[:id])
+      redirect_to(root_path) unless current_user.id == @resume.userid
+    end
+    def authorized_user
+      #@section = current_user.sections.find_by_id(params[:id])
+	  @resume = Resume.find(params[:id])
+	  
+	  if @resume.userid != current_user.id
+		redirect_to root_path
+	  end
+    end
 
 
   

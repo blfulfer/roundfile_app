@@ -1,5 +1,7 @@
 class SectionsController < ApplicationController
-
+	before_filter :authenticate, :only => [:create, :show, :new, :allsections, :mysections, :edit, :update]
+	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :authorized_user, :only => :destroy
   
   def show
 	@section = Section.find(params[:id])
@@ -85,5 +87,22 @@ class SectionsController < ApplicationController
      # format.xml  { head :ok }
     #end
   end
+  
+  private
+	
+	def authenticate
+      deny_access unless signed_in?
+    end
+	def correct_user
+      @section = Section.find(params[:id])
+      redirect_to(root_path) unless current_user.id == @section.userid
+    end
+    def authorized_user
+      @section = Section.find(params[:id])
+	  
+	  if @section.userid != current_user.id
+      redirect_to root_path
+	  end
+    end
 
 end
