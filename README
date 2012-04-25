@@ -13,7 +13,7 @@ Credit:
 Star Rating CSS functionality from:  http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/
 User and Sessions functionality taken from sample_app.
 
---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 Create resumes by putting sections together.
 First create a section (or more).
@@ -22,8 +22,8 @@ First create a section (or more).
 Then, create a new resume.
 -Give it a name.
 -Choose the sections you would like to add and the order they will go in.
--Resumes can be edited later. (Order of sections can be changed, sections can be added, 
-     and sections can be deleted.
+-Resumes can be edited later. (Order of sections can be changed, sections 
+     can be added, and sections can be deleted.
 
 When viewing a resume, you can:
 -Comment
@@ -31,8 +31,8 @@ When viewing a resume, you can:
 -Rate
     -You can delete a rating that you made.
 -If you are the resume creator, you can edit or delete your resume.
-    -- When your resume is deleted, all the section/resume reations are also deleted. 
-       (Model: resumesection)
+    -- When your resume is deleted, all the section/resume reations are 
+       also deleted. (Model: resumesection)
 
 My sections shows a list of your sections.
 
@@ -42,9 +42,10 @@ The User Resumes section shows you a list of users.
 -When you select a user, a list of their resumes shows up.
 
 Security is set up so that you have to be logged in to access any pages.
-Some other pages also require that the creator has the only access (Ex: edit, delete)
+Some other pages also require that the creator has the only access 
+    - (Ex: edit, delete)
 
---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 NOTES:
 ====================================================================================
