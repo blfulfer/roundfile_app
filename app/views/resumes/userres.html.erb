@@ -1,12 +1,35 @@
 <h1><%= @title %></h1>
 <br />
 <div id = "userres-wrapper">
-<div id= "users">
-<center><h3>Users</h3></center><br />
-	<% @user.each do |user| %>
-		<%= link_to "#{user.name}", "/userresumes/#{user.id}" %><br />
-	<% end %>
+
+<div id= "users-wrap">
+	<div id= "users">
+		<h3>Search for User</h3>
+		<% form_tag '/userresumes', :method => 'get' do %>
+		<p>
+			<%= text_field_tag :search, params[:search], :size => "35" %>
+			<%= submit_tag "Search", :disable_with => "Searching..." %>
+		</p>
+		<% end %>
+		<% if !params[:search].blank? %>
+			<u>Results</u><br>
+			<% @usersearch.each do |user| %>  
+				<%= link_to "#{user.name}", "/userresumes/#{user.id}?utf8=✓&search=#{params[:search]}" %><br>	
+			<% end %>
+			<% if @usersearch.blank? %>
+				No Results Found 
+			<% end %>
+		<% end %>
+	</div>
+<br>
+
+	<div id= "users">
+		<h3>All Users</h3><br />
+		<% @user.each do |user| %>
+			<%= link_to "#{user.name}", "/userresumes/#{user.id}" %><br />
+		<% end %>
 	
+	</div>
 </div>
 
 <div id="userres">
@@ -16,7 +39,10 @@
 	<% end %>
 	
 	<% if !params[:id].blank? %>
-		<h3><%= @title2 %></h3><br />
+		<h2><%= @title2 %></h2>
+		<%= link_to "User Profile", "/users/#{@userselected.id}" %><br><br>
+		
+		<h3>Resumes</h3>
 		<% @resume.each do |resume| %>
 		<%= link_to "#{resume.name}", "/viewresume/#{resume.id}" %><br />
 		<% end %>
@@ -30,4 +56,8 @@
 <br /><br />
 </div>
 <br />
+
+
+
+
 

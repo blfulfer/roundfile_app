@@ -1,0 +1,62 @@
+
+<div id = "search-wrapper">
+<div id = "search-a">
+
+<h1><%= @title %></h1>
+<br />
+
+<% form_for(:resume, :url => '/search', :method => 'get') do |f| %>
+  <div class="field">
+	<% if params[:typesearch] == "1" %>
+		<%= radio_button_tag :typesearch, 1, params[:typesearch] %>
+		<%= label_tag("Resume Titles") %><br>
+		<%= radio_button_tag :typesearch, 2 %>
+		<%= label_tag("Resume Content") %>
+	<% elsif params[:typesearch] == "2" %>
+		<%= radio_button_tag :typesearch, 1 %>
+		<%= label_tag("Resume Titles") %><br>
+		<%= radio_button_tag :typesearch, 2, params[:typesearch] %>
+		<%= label_tag("Resume Content") %>
+	<% else %>
+		<%= radio_button_tag :typesearch, 1, true%>
+		<%= label_tag("Resume Titles") %><br>
+		<%= radio_button_tag :typesearch, 2 %>
+		<%= label_tag("Resume Content") %>
+	<% end %>
+	
+  </div>
+
+  <div class="field">
+    <%= text_field_tag :search, params[:search] %>
+    <%= f.submit "Search", :disable_with => "Searching..." %>
+  </div>
+<% end %>
+
+<% if !params[:search].blank? && !@resumesearch.blank? %>
+<br>
+<h3><u>Results</u></h3>
+<% @resumesearch.each do |resumesearch| %>  
+    <%= link_to "#{resumesearch.name}", "/viewresume/#{resumesearch.id}" %>	<br>	
+<% end %>
+	<% if @resumesearch.blank? %>
+		No Results Found 
+	<% end %>
+
+
+<% elsif !params[:search].blank? && !@resumesearchres.blank? %>
+<br>
+<h3><u>Results</u></h3>
+<% @resumesearchres.each do |resumesearchres| %>  
+     <%= link_to "#{resumesearchres.resume.name}", "/viewresume/#{resumesearchres.resumeid}" %>	<br>
+<% end %>
+	<% if @resumesearchres.blank? %>
+		No Results Found 
+	<% end %>
+
+<% elsif !params[:search].blank? %>
+No Results Found 
+<% end %>
+
+
+</div>
+</div>

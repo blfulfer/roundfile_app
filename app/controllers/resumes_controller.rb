@@ -70,6 +70,7 @@ class ResumesController < ApplicationController
 	else
 		@title2 = " "
 	end
+	@usersearch = User.search(params[:search])
 	
   end
   
@@ -101,6 +102,28 @@ class ResumesController < ApplicationController
 	
 	redirect_to :action => 'myresumes'
 
+  end
+  
+  def search
+    @title = "Search Resumes"
+	@title1 = "Search Resume Titles"
+	@title2 = "Search Resume Content"
+	
+	if (params[:typesearch] == "1")
+		@resumesearch = Resume.search(params[:search])
+	elsif (params[:typesearch] == "2")
+		
+		#Resumesection 
+		@resSearch= Resumesection.search(params[:search])
+		@resumesearchres= Resumesection.search(params[:search]).uniq{|x| x.resumeid}
+
+		#find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+		#@resumesearchres= @resSearch.find(:all, :conditions => ['DISTINCT resumeid'])
+	end
+	
+	
+	#@resumesearch = Resume.search(params[:search])
+	#@resumesearchres = Resumesection.search(params[:searchres])
   end
   
   private

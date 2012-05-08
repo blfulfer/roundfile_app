@@ -580,13 +580,25 @@ padding: 20px 20px 20px 20px;
 	float: right;
 }
 
+#search-wrapper{
+	width: 850px;
+}
+#search-a{
+	width: 400px;
+	float: left;
+}
+
 #userres-wrapper{
 	width: 850px;
+}
+#users-wrap{
+	width: 200px;
+	float: left;
 }
 
 #users{
 	width: 200px;
-	float: left;
+	/*float: left;*/
 	background:  #f8f8f8;
 	padding: 20px 20px 20px 20px;
 }
@@ -595,4 +607,7 @@ padding: 20px 20px 20px 20px;
 	width: 550px;
 	float: right;
 	padding: 20px 20px 20px 20px;
+}
+#text_box{
+	width 100px;
 }

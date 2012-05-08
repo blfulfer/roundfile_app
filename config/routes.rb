@@ -14,6 +14,8 @@ root :to => 'pages#home'
 	match '/newsection',  :to => 'sections#new'
 	match '/mysections',  :to => 'sections#mysections'
 	match '/newresume',  :to => 'resumes#new'
+	match '/search',  :to => 'resumes#search'
+	match '/search/:search',  :to => 'resumes#search'
 	match '/viewresume/:id',  :to => 'resumes#show'
 	match '/newresume/:id', :to => 'resumesections#new'
 	match '/newresumelist/:id', :to => 'resumesections#list'
@@ -28,6 +30,7 @@ root :to => 'pages#home'
 	match '/newrating/:id/:score', :to => 'ratings#new'
 	match '/userresumes', :to => 'resumes#userres'
 	match '/userresumes/:id/', :to => 'resumes#userres'
+	match '/userresumes/:id/:search/', :to => 'resumes#userres'
 	
 	
   # The priority is based upon order of creation:

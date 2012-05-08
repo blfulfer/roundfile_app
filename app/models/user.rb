@@ -46,6 +46,14 @@ class User < ActiveRecord::Base
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
   end
+  
+  def self.search(search)
+	  if search
+		find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	  else
+		find(:all)
+	  end
+	end
 
   private
 
