@@ -106,24 +106,13 @@ class ResumesController < ApplicationController
   
   def search
     @title = "Search Resumes"
-	@title1 = "Search Resume Titles"
-	@title2 = "Search Resume Content"
 	
-	if (params[:typesearch] == "1")
+	if (params[:typesearch] == "1") #TITLES
 		@resumesearch = Resume.search(params[:search])
-	elsif (params[:typesearch] == "2")
-		
-		#Resumesection 
+	elsif (params[:typesearch] == "2")#CONTENT
 		@resSearch= Resumesection.search(params[:search])
 		@resumesearchres= Resumesection.search(params[:search]).uniq{|x| x.resumeid}
-
-		#find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-		#@resumesearchres= @resSearch.find(:all, :conditions => ['DISTINCT resumeid'])
 	end
-	
-	
-	#@resumesearch = Resume.search(params[:search])
-	#@resumesearchres = Resumesection.search(params[:searchres])
   end
   
   private
