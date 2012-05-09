@@ -561,7 +561,7 @@ td.sidebar {
 }
 
 #resume{
-	background:  #f8f8f8;
+	background:  #eeeeee;
 	padding: 20px 20px 20px 20px;
 	border-style: solid;
 	border-width: 1px;
@@ -616,7 +616,7 @@ td.sidebar {
 	width: 40em;
 	float: left;
 	padding: 20px 20px 20px 20px;
-	background:  #f8f8f8;
+	background:  #eeeeee;
 }
 .round {
   -moz-border-radius:    10px;
@@ -643,7 +643,7 @@ td.sidebar {
 #users{
 	width: 200px;
 	/*float: left;*/
-	background:  #f8f8f8;
+	background:  #eeeeee;
 	padding: 20px 20px 20px 20px;
 }
 .round {
@@ -673,7 +673,7 @@ td.sidebar {
 
 
 #panel{
-	background:  #f8f8f8;
+	background:  #eeeeee;
 	padding: 20px 20px 20px 20px;
 	width: auto;
 }
@@ -694,7 +694,7 @@ td.sidebar {
   border-radius:         10px;
 }
 #panel-section{
-	background:  #f8f8f8;
+	background:  #eeeeee;
 	padding: 20px 20px 20px 20px;
 	width: 40em;
 }
@@ -721,7 +721,7 @@ td.sidebar {
 	border-style: solid;
 	border-width: 1px;
 	border-color: black;
-	background:  #f8f8f8;
+	background:  #eeeeee;
 	padding: 20px 20px 20px 20px;
 	width: 300px;
 }
@@ -730,6 +730,17 @@ td.sidebar {
   -webkit-border-radius: 10px;
   border-radius:         10px;
 }
+#panel-newcomment{
+	background:  #eeeeee;
+	padding: 20px 20px 20px 20px;
+	width: 30em;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
 
 
 a.comment_button {
