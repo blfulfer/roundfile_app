@@ -1,5 +1,6 @@
 <h1>Sign Up</h1>
 <br />
+<div id = "panel-signin" class = "round">
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
 
@@ -23,3 +24,4 @@
     <%= f.submit "Sign Up" %>
   </div>
 <% end %>
+</div>

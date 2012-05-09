@@ -1,5 +1,6 @@
 <h1>Sign In</h1>
 <br />
+<div id = "panel-signin" class = "round">
 <%= form_for(:session, :url => sessions_path) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -17,7 +18,7 @@
     <%= f.submit "Sign In" %>
   </div>
 <% end %>
-
+</div><br />
 <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 
 

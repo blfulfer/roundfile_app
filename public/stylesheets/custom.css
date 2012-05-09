@@ -22,11 +22,11 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 3.5em;
 }
 
 h2 {
-	font-size: 2.4em;
+	font-size: 2.6em;
 }
 
 h3 {
@@ -560,9 +560,17 @@ td.sidebar {
   color: #fff;
 }
 
-#resume p{
+#resume{
 background:  #f8f8f8;
 padding: 20px 20px 20px 20px;
+border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
 }
 
 #ratecomment{
@@ -571,22 +579,58 @@ padding: 20px 20px 20px 20px;
 }
 
 #rate{
-	width: 425px;
+	width: 350px;
 	float: left;
+	padding: 20px 20px 20px 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
 }
 
 #comment{
-	width: 425px;
+	width: 350px;
 	float: right;
+	padding: 20px 20px 20px 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
 }
 
 #search-wrapper{
 	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 #search-a{
 	width: 400px;
 	float: left;
+	padding: 20px 20px 20px 20px;
+	background:  #f8f8f8;
 }
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+#space{
+	width: 400px; 
+}
+#search-results{
+	width: 400px;
+	padding: 20px 20px 20px 20px;
+}
+
 
 #userres-wrapper{
 	width: 850px;
@@ -602,12 +646,106 @@ padding: 20px 20px 20px 20px;
 	background:  #f8f8f8;
 	padding: 20px 20px 20px 20px;
 }
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
 
 #userres{
 	width: 550px;
 	float: right;
 	padding: 20px 20px 20px 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
 }
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
 #text_box{
 	width 100px;
 }
+
+
+
+#panel{
+	background:  #f8f8f8;
+	padding: 20px 20px 20px 20px;
+	width: auto;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+#panel-signin{
+	background:  #f8f8f8;
+	padding: 20px 20px 20px 20px;
+	width: 200px;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+#panel-section{
+	background:  #f8f8f8;
+	padding: 20px 20px 20px 20px;
+	width: 400px;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+#panel-rating{
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	padding: 20px 20px 20px 20px;
+	width: 300px;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+#panel-comment{
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	background:  #f8f8f8;
+	padding: 20px 20px 20px 20px;
+	width: 300px;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+
+a.comment_button {
+  display: block;
+  text-align: center;
+  width: 150px;
+  color: #fff;
+  background: #181B20;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 10px;
+}
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+

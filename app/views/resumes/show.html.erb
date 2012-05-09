@@ -1,18 +1,21 @@
 <%= stylesheet_link_tag 'star_rating', :media => 'screen' %>
 <h1><%= @title %></h1>
 <br />
+<div id="panel-section" class="round">
 <b>Resume Name:</b> <%= @resume.name %><br />
 Author: <%= link_to "#{@resume.user.name}", user_path(@resume.userid) %><br />
 <% if current_user.id == @resume.userid %>
 <%= link_to 'Edit Resume', edit_resume_path(@resume) %> | 
 <%= link_to 'Delete Resume', @resume, :confirm => 'Are you sure?', :method => :delete %><br />
 <% end %>
+</div>
 
 <br />
 <br />
-<b><%= link_to "Make a Comment", "/newcomment/#{@resume.id}" %></b><br />
+
+
 <% if !@usercurrentrating.blank? %>
-Your Rating for this resume: 
+Your Rating: 
 	<ul class="star-rating">
 	
 	<% if @usercurrentrating.rating_score == 1 %>
@@ -54,11 +57,15 @@ Rate Resume:
 </ul>
 <% end %>
 
-
+<br><b><%= link_to "Make a Comment", "/newcomment/#{@resume.id}", :class => "comment_button round" %></b>
 <br />
-<div id= "resume">
-<p>
+
+
+<div id= "resume" class="round">
+
+<u><h3>Resume Content</h3></u>
 <br /><br />
+<p>
 <% @resumesection.each do |resumesection| %>
 
 	<%= raw resumesection.section.content %><br />
@@ -72,18 +79,17 @@ Rate Resume:
 
 <br />
 <br />
-<bf />
 
-<div id= "ratecomment">
 	
-		
-	<div id = "rate">
-	<h3>Ratings</h3>
+		 
+	<div id = "rate" class="round">
+	<u><h3>Ratings</h3></u>
 		<% if !@rating.blank? %>
 		
 		<br />
 		<% @rating.each do |rating| %>
-			<%= rating.user.name %> : 
+		<div id = "panel-rating" class = "round">
+			<u><%= rating.user.name %></u> : 
 			
 			
 	<ul class="star-rating">
@@ -111,7 +117,7 @@ Rate Resume:
 			<% if current_user.id == rating.userid %> 
 				<%= link_to 'Delete', rating, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
-			<br /><br />
+			</div><br /><br />
 		<% end %>
 		<% else %>
 		
@@ -121,18 +127,20 @@ Rate Resume:
 	</div>
 	
 	
-	<div id= "comment">
-	<h3>Comments</h3>
+	<div id= "comment" class = "round">
+	<u><h3>Comments</h3></u>
 		<% if !@comment.blank? %>
 		
 		<br />
 		<% @comment.each do |comment| %>
+		<div id = "panel-comment" class = "round">
 			<%= comment.comment %><br />
 			<b>Author:</b> <%= link_to "#{comment.user.name}", user_path(comment.user.id) %> <br />
 			<% if current_user.id == comment.userid %>
-				<%= link_to 'Edit', edit_comment_path(comment) %> | 
-				<%= link_to 'Delete', comment, :confirm => 'Are you sure?', :method => :delete %>
+				<u><%= link_to 'Edit', edit_comment_path(comment) %></u> | 
+				<u><%= link_to 'Delete', comment, :confirm => 'Are you sure?', :method => :delete %></u>
 			<% end %>
+			</div>
 			<br /><br />
 		<% end %>
 		

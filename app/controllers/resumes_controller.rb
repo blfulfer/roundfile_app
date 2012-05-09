@@ -110,7 +110,7 @@ class ResumesController < ApplicationController
 	if (params[:typesearch] == "1") #TITLES
 		@resumesearch = Resume.search(params[:search])
 	elsif (params[:typesearch] == "2")#CONTENT
-		@resSearch= Resumesection.search(params[:search])
+		#@resSearch= Resumesection.search(params[:search])
 		@resumesearchres= Resumesection.search(params[:search]).uniq{|x| x.resumeid}
 	end
   end

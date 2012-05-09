@@ -3,7 +3,7 @@
 <div id = "userres-wrapper">
 
 <div id= "users-wrap">
-	<div id= "users">
+	<div id= "users" class = "round">
 		<h3>Search for User</h3>
 		<% form_tag '/userresumes', :method => 'get' do %>
 		<p>
@@ -23,7 +23,7 @@
 	</div>
 <br>
 
-	<div id= "users">
+	<div id= "users" class = "round">
 		<h3>All Users</h3><br />
 		<% @user.each do |user| %>
 			<%= link_to "#{user.name}", "/userresumes/#{user.id}" %><br />
@@ -32,7 +32,7 @@
 	</div>
 </div>
 
-<div id="userres">
+<div id="userres" class="round">
 	<% if params[:id].blank? %>
 		<br />
 		Pick a User from the list on the left.
@@ -42,7 +42,7 @@
 		<h2><%= @title2 %></h2>
 		<%= link_to "User Profile", "/users/#{@userselected.id}" %><br><br>
 		
-		<h3>Resumes</h3>
+		<u><h3>Resumes</h3></u>
 		<% @resume.each do |resume| %>
 		<%= link_to "#{resume.name}", "/viewresume/#{resume.id}" %><br />
 		<% end %>

@@ -1,10 +1,12 @@
 
 <div id = "search-wrapper">
-<div id = "search-a">
+
 
 <h1><%= @title %></h1>
 <br />
-
+<br />
+<div id = "search-a" class = "round">
+You can search for resumes by either their title or their content.
 <% form_for(:resume, :url => '/search', :method => 'get') do |f| %>
   <div class="field">
 	<% if params[:typesearch] == "1" %>
@@ -27,13 +29,19 @@
   </div>
 
   <div class="field">
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], :size => 60 %>
     <%= f.submit "Search", :disable_with => "Searching..." %>
   </div>
 <% end %>
+</div>
 
+<div id="space">
+<font color="white">*</font>
+</div>
+
+<div id ="search-results" >
 <% if !params[:search].blank? && !@resumesearch.blank? %>
-<br>
+
 <h3><u>Results</u></h3>
 <% @resumesearch.each do |resumesearch| %>  
     <%= link_to "#{resumesearch.name}", "/viewresume/#{resumesearch.id}" %>	<br>	
@@ -44,7 +52,7 @@
 
 
 <% elsif !params[:search].blank? && !@resumesearchres.blank? %>
-<br>
+
 <h3><u>Results</u></h3>
 <% @resumesearchres.each do |resumesearchres| %>  
      <%= link_to "#{resumesearchres.resume.name}", "/viewresume/#{resumesearchres.resumeid}" %>	<br>
