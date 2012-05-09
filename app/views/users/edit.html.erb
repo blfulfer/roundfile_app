@@ -1,5 +1,5 @@
-<h1>Edit user</h1>
-
+<h1>Edit user</h1><br>
+<div id = "panel-signin" class = "round">
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
@@ -26,4 +26,6 @@
 <div>
   <%= gravatar_for @user %>
   <a href="http://gravatar.com/emails">change</a>
+</div>
+
 </div>
