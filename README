@@ -15,6 +15,7 @@ User and Sessions functionality taken from sample_app.
 Base search code from http://railscasts.com/episodes/37-simple-search-form
 
 ----------------------------------------------------------------------------------
+INSTRUCTIONS
 
 Create resumes by putting sections together.
 First create a section (or more).
@@ -49,6 +50,14 @@ Some other pages also require that the creator has the only access
 ----------------------------------------------------------------------------------
 
 NOTES:
+
+*** For Search, the search functions use "LIKE" which works in on your server, but in 
+     Heroku this makes it case-sensitive. The fix is to set it to "ILIKE" for the code 
+     that will be on Heroku to make it case -insensitive. (ILIKE does not work in the 
+     virtual machine local server.)
+
+
+
 ====================================================================================
 This gem, Flavoured Markdown, will help us solve the potential risk of allowing
 users to enter malicious code with HTML or JavaScript.
