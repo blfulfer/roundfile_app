@@ -14,7 +14,9 @@ class Resumesection < ActiveRecord::Base
 	def self.search(search)
 	  if search
 		find(:all, :joins => :section, :conditions => ['sections.content ILIKE ?', "%#{search}%"]) #Set ILIKE for Heroku to make case-insensitive
-																	#LIKE for git
+																									#LIKE for git
+																	
+		#find(:all, :conditions => ['sections.content LIKE ?', "%#{search}%"]) #FOR GIT
 	  else
 		find(:all)
 	  end
