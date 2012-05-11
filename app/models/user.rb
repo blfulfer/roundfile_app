@@ -49,7 +49,8 @@ class User < ActiveRecord::Base
   
   def self.search(search)
 	  if search
-		find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+		find(:all, :conditions => ['name ILIKE ?', "%#{search}%"]) #Set ILIKE for Heroku to make case-insensitive
+																	#LIKE for git
 	  else
 		find(:all)
 	  end
